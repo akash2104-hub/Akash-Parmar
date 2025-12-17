@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 60 10% 98%;
+    --foreground: 0 0% 8%;
+
+    --card: 60 10% 96%;
+    --card-foreground: 0 0% 8%;
+
+    --popover: 60 10% 98%;
+    --popover-foreground: 0 0% 8%;
+
+    --primary: 0 0% 8%;
+    --primary-foreground: 60 10% 98%;
+
+    --secondary: 60 5% 92%;
+    --secondary-foreground: 0 0% 8%;
+
+    --muted: 60 5% 90%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 35 100% 50%;
+    --accent-foreground: 0 0% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 0 0% 8%;
+
+    --radius: 0rem;
+
+    /* Custom tokens */
+    --warm-white: 60 10% 98%;
+    --ink: 0 0% 8%;
+    --stone: 30 5% 70%;
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(0 0% 0% / 0.06);
+    --shadow-hover: 0 8px 30px hsl(0 0% 0% / 0.1);
+
+    /* Transitions */
+    --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', system-ui, sans-serif, 'DelailtaSignature-Regular';
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Instrument Serif', serif, 'DelailtaSignature-Regular';
+  }
+}
+
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 1px hsl(var(--foreground));
+    color: transparent;
+  }
+
+  .marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .hover-expand {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-expand:hover {
+    flex: 2;
+  }
+
+  .image-parallax {
+    transition: var(--transition-smooth);
+  }
+
+  .image-parallax:hover {
+    transform: scale(1.05);
+  }
+
+  .split-reveal {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
