@@ -53,7 +53,8 @@ export default {
       fontFamily: {
         serif: ["Instrument Serif", "serif"],
         sans: ["DM Sans", "system-ui", "sans-serif"],
-        akash: ["Momo Signature", "serif"],
+        signature: ["Greatvibes-Regular", "cursive"],
+        akash: ["Denike-Regular"],
       },
       borderRadius: {
         lg: "var(--radius)",

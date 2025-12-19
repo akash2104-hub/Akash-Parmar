@@ -12,15 +12,27 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 mix-blend-difference">
+      <nav className="fixed top-0 left-0 right-0 z-50"> {/* Add this if you use text instead of image mix-blend-difference */}
         <div className="px-6 md:px-12 py-6 flex items-center justify-between">
+          {/* <button
+            onClick={() => scrollTo("hero")}
+            className="font-akash text-4xl text-primary-foreground tracking-tight"
+          >
+            lens Poetries
+          </button> */} 
           <button
             onClick={() => scrollTo("hero")}
-            className="font-serif text-4xl text-primary-foreground tracking-tight"
+            className="flex items-center"
           >
-            Akash Parmar
+         <img
+          src="/logo-01.png"
+          alt="Lens Poetries logo"
+          className="h-12 w-auto"
+        />
+
           </button>
 
+      
           <button
             onClick={() => setIsOpen(true)}
             className="text-primary-foreground hover:opacity-60 transition-opacity"
@@ -38,7 +50,7 @@ const Navigation = () => {
       >
         <div className="h-full flex flex-col">
           <div className="px-6 md:px-12 py-6 flex items-center justify-between">
-            <span className="font-serif text-4xl text-background">Akash Parmar</span>
+            <span className="font-akash text-4xl text-background">lens Poetries</span>
             <button
               onClick={() => setIsOpen(false)}
               className="text-background hover:opacity-60 transition-opacity"
